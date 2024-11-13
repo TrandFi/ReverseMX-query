@@ -17,11 +17,11 @@
    Данныая функция возвращает список MX-записей для переданного домена.
 2. Для более наглядного представления информации вывод был осуществлен с помощью таблиц (библиотека prettytable)
    Ниже приведен основной код программы
-'''python
+```python
 mxrecords_list = dns.resolver.resolve(input_domain, "MX") #  Для переданного домена находим все MX-записи
     mx_table = PrettyTable(["MX record","Priority"]) #  Создаем таблицу и описываем заголовки столбцов
     for record in mxrecords_list:
         output = record.to_text().split() #  Разделяем MX-запись для удобного вывода в таблице            
         mx_table.add_row([output[1], output[0]]) #  Выводим запись в виде [ № приоритета, MX-запись ]
     print(mx_table)
-'''
+```
