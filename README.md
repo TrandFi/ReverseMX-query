@@ -33,15 +33,15 @@ ip_domain = ip_lookup(domain)
 3. Составление запроса на веб-сайт ViewDNS с указанием IP-адреса нужного нам хоста и нашего API ключа
 ```python
 url = f"https://api.viewdns.info/reverseip/?host={ip}&apikey={API_KEY_FROM_VIEWDNS}&output=json" #  Формируем запрос на сайт ViewDNS, указывая IP нудного нам хоста и наш API ключ
-response = requests.get(url)  #  Отправляем запрос на указанный ресурс
 ```
 4. Отправка запроса на сайт и получение данных в виде словаря, используя функцию json()
 ```python
+response = requests.get(url)  #  Отправляем запрос на указанный ресурс
 if response.ok:  #  В случае положительного соединения с хостом
    data = response.json()  #  Преобразуем ответ в json формат
    #  Данная функция автоматически преобразует объект ответа от хоста в словарь
 ```
-5. Выборка необходимых данных по ключам словаря
+5. Выборка необходимых данных по ключам словаря data
 ```python
 if "response" in data and "domains" in data["response"]:  #  Проверяем наличие ключей "response" и "domains" в словаре data
       domainlist = data["response"]["domains"]  #  Записываем в переменную значение ключа response[domains]. 
