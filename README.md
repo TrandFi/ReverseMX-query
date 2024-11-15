@@ -19,7 +19,7 @@
 ```python
 domain = input("Input domain server name for search:\n>")
 ```
-2. Получение IP-адреса указанного донема с помощью функции ip_lookup(domain_name)
+2. Получение IP-адреса указанного домена с помощью функции ip_lookup(domain_name)
 ```python
 def ip_lookup(domain_name):
     try:
